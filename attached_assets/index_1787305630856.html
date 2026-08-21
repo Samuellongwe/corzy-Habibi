@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11100e">
+  <title>Cozy Habibi — Digital Dining Experience</title>
+  <meta name="description" content="A premium digital ordering and dining experience concept for Cozy Restaurant & Lounge, Lusaka.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">WELCOME HABIBI · LAMASAT COMPLEX, MAKENI · LUSAKA</div>
+
+  <header class="nav">
+    <a class="brand" href="#home"><span>COZY</span><small>HABIBI</small></a>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#experience">Experience</a>
+      <a href="#club">Cozy Club</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-btn" onclick="openCart()">Cart <b id="cartCount">0</b></button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">FOOD · HARMONY · LAUGHTER</p>
+        <h1>Come for the food.<br><em>Stay for the feeling.</em></h1>
+        <p class="hero-text">A new digital way to experience Cozy — browse the menu, order from your table and make every visit a little more special.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#menu">Explore Menu <span>↗</span></a>
+          <button class="btn btn-ghost" onclick="scrollToClub()">Join Cozy Club</button>
+        </div>
+        <div class="hero-meta">
+          <span>● Open today</span>
+          <span>Makeni, Lusaka</span>
+          <span>+260 97 593 9999</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-card">
+          <span>CHEF'S PICK</span>
+          <strong>Make tonight<br>worth remembering.</strong>
+          <button onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Order something good →</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker">
+      <span>LEBANESE FUSION</span><i>✦</i><span>INTERNATIONAL</span><i>✦</i><span>SUSHI</span><i>✦</i><span>BAKERY</span><i>✦</i><span>SHISHA LOUNGE</span>
+    </section>
+
+    <section class="section" id="menu">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">ORDER FROM COZY</p>
+          <h2>Your cravings,<br><em>handled.</em></h2>
+        </div>
+        <p class="section-note">Choose a category, add your favourites to the bag, then send your order directly to Cozy on WhatsApp.</p>
+      </div>
+
+      <div class="category-tabs" id="tabs">
+        <button class="active" data-cat="all">All</button>
+        <button data-cat="Lebanese Fusion">Lebanese Fusion</button>
+        <button data-cat="International">International</button>
+        <button data-cat="Sushi">Sushi</button>
+        <button data-cat="Breakfast">Breakfast</button>
+        <button data-cat="Dessert">Dessert</button>
+      </div>
+      <div class="menu-grid" id="menuGrid"></div>
+      <p class="demo-note">Demo prices are placeholders for the sales prototype. Replace them with Cozy's approved current prices before launch.</p>
+    </section>
+
+    <section class="qr-section" id="experience">
+      <div class="qr-art">
+        <div class="qr-box">
+          <div class="fake-qr"></div>
+          <strong>TABLE 14</strong>
+          <small>SCAN · ORDER · RELAX</small>
+        </div>
+      </div>
+      <div class="qr-copy">
+        <p class="eyebrow">THE FEATURE TO SELL</p>
+        <h2>Your table.<br><em>Your order.</em></h2>
+        <p>Put a QR code on every table. Guests scan, browse the menu and send their order without waiting for a waiter to take it manually.</p>
+        <div class="steps">
+          <div><b>01</b><span>Scan the table QR</span></div>
+          <div><b>02</b><span>Build your order</span></div>
+          <div><b>03</b><span>Send it to the kitchen</span></div>
+        </div>
+        <button class="btn btn-primary" onclick="simulateTableOrder()">Try Table 14 Demo →</button>
+      </div>
+    </section>
+
+    <section class="club" id="club">
+      <div>
+        <p class="eyebrow">COZY HABIBI CLUB</p>
+        <h2>Come back.<br><em>Get rewarded.</em></h2>
+      </div>
+      <div class="club-card">
+        <div class="club-top"><span>COZY CLUB</span><span>✦</span></div>
+        <p>Every visit can become a reason to come back.</p>
+        <div class="points"><strong>250</strong><span>POINTS</span></div>
+        <div class="progress"><span></span></div>
+        <small>50 more points to your next reward</small>
+        <button onclick="joinClub()">Join the Club →</button>
+      </div>
+    </section>
+
+    <section class="experience">
+      <div class="experience-image"></div>
+      <div class="experience-copy">
+        <p class="eyebrow">THE COZY EXPERIENCE</p>
+        <h2>Where flavour<br><em>feels like home.</em></h2>
+        <p>From Lebanese fusion and global favourites to sushi, fresh bakery treats and a relaxed lounge atmosphere — Cozy brings different cravings under one roof.</p>
+        <div class="feature-row"><span>01</span><b>Dining</b><small>Breakfast to dinner</small></div>
+        <div class="feature-row"><span>02</span><b>Bakery</b><small>Freshly baked daily</small></div>
+        <div class="feature-row"><span>03</span><b>Lounge</b><small>Good vibes after dark</small></div>
+      </div>
+    </section>
+
+    <section class="reservation" id="contact">
+      <div>
+        <p class="eyebrow">MAKE IT A PLAN</p>
+        <h2>See you at<br><em>Cozy.</em></h2>
+        <p>Lamasat Complex, Linda Road, Makeni, Lusaka</p>
+        <p>Mon–Thu & Sun: 09:00–22:00<br>Fri–Sat: 09:00–23:00</p>
+      </div>
+      <form onsubmit="requestReservation(event)">
+        <input id="guestName" required placeholder="Your name">
+        <input id="guestPhone" required placeholder="Phone number">
+        <div class="two"><input id="guestDate" required type="date"><input id="guestTime" required type="time"></div>
+        <input id="guestPeople" required type="number" min="1" max="20" value="2" placeholder="Guests">
+        <button class="btn btn-primary" type="submit">Request a Table →</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand"><span>COZY</span><small>HABIBI</small></div>
+    <p>Where flavour feels like home.</p>
+    <a href="tel:+260975939999">+260 97 593 9999</a>
+  </footer>
+
+  <div class="overlay" id="overlay" onclick="closeCart(event)">
+    <aside class="cart" onclick="event.stopPropagation()">
+      <div class="cart-head"><h3>Your Bag</h3><button onclick="closeCart()">×</button></div>
+      <div id="cartItems"></div>
+      <div class="cart-total"><span>Total</span><strong id="cartTotal">K0</strong></div>
+      <button class="btn btn-primary full" onclick="sendWhatsAppOrder()">Order via WhatsApp →</button>
+      <small class="cart-help">For the live version, this button can connect to Cozy's order dashboard and approved payment provider.</small>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Cozy Habibi"
+description = "A premium digital dining experience for Cozy Restaurant & Lounge in Lusaka, with menu browsing, cart ordering, table QR demos, loyalty signup, and reservation requests."
+version = "1.0.0"
+id = "artifacts/web"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22333
+
+[services.development]
+run = "pnpm --filter @workspace/web run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/web", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/web/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22333"
+BASE_PATH = "/"
